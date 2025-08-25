@@ -72,7 +72,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-a-test-on-blogs",
+            },{id: "post-an-end-at-a2",
+      
+        title: "An end at A2",
+      
+      description: "this is a post recording the end of my A2 life",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/A2life/";
+        
+      },
+    },{id: "post-a-test-on-blogs",
       
         title: "a test on blogs",
       
