@@ -451,16 +451,25 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-got-to-the-second-stage-of-espr-pair-summer-school-sparkles-smile",
-          title: 'Got to the second stage of espr/pair summer school! :sparkles: :smile:',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
+            },},{id: "news-a-long-announcement-with-details",
           title: 'A long announcement with details',
           description: "",
           section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
+              window.location.href = "/news/announcement_1/";
             },},{id: "news-got-the-conditional-offer-from-oxford-sparkles-smile",
           title: 'Got the conditional offer from Oxford! :sparkles: :smile:',
+          description: "",
+          section: "News",},{id: "news-got-to-the-second-stage-of-espr-pair-summer-school-smile",
+          title: 'Got to the second stage of espr/pair summer school! :smile:',
+          description: "",
+          section: "News",},{id: "news-got-to-the-rejected-by-espr-pair-summer-school-broken-heart",
+          title: 'Got to the rejected by espr/pair summer school! :broken_heart:',
+          description: "",
+          section: "News",},{id: "news-cat-hibiscus-sparkles-wink-heart",
+          title: ':cat: :hibiscus: :sparkles: :wink: :heart:',
+          description: "",
+          section: "News",},{id: "news-sparkles-smile",
+          title: '🐱 :sparkles: :smile:',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
