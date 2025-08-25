@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Got to the second stage of espr/pair summer school! :smile:
+Got to the rejected by espr/pair summer school! :broken_heart:
