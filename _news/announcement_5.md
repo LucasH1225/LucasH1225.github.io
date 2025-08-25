@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-:cat: :hibiscus: :sparkles: :wink: :heart:
+🐱 :hibiscus: :sparkles: :wink: :heart:
