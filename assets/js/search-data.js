@@ -72,7 +72,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-an-end-at-a2",
+            },{id: "post-8-25journal",
+      
+        title: "8.25Journal",
+      
+      description: "Daily journal after a meaningful week",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/journal/";
+        
+      },
+    },{id: "post-an-end-at-a2",
       
         title: "An end at A2",
       
@@ -465,11 +476,11 @@ ninja.data = [{
           section: "News",},{id: "news-got-to-the-rejected-by-espr-pair-summer-school-broken-heart",
           title: 'Got to the rejected by espr/pair summer school! :broken_heart:',
           description: "",
-          section: "News",},{id: "news-cat-hibiscus-sparkles-wink-heart",
-          title: ':cat: :hibiscus: :sparkles: :wink: :heart:',
+          section: "News",},{id: "news-hibiscus-sparkles-wink-heart",
+          title: '🐱 :hibiscus: :sparkles: :wink: :heart:',
           description: "",
-          section: "News",},{id: "news-sparkles-smile",
-          title: '🐱 :sparkles: :smile:',
+          section: "News",},{id: "news-oxford-st-catherine-unconditional-offer-v",
+          title: 'Oxford St Catherine unconditional offer :v:',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
