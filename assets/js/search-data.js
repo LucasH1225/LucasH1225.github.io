@@ -72,7 +72,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-爱情",
+            },{id: "post-8-28天气阴",
+      
+        title: "8.28天气阴",
+      
+      description: "letter",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/letter/";
+        
+      },
+    },{id: "post-爱情",
       
         title: "爱情",
       
