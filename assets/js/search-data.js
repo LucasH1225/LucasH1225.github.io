@@ -72,11 +72,11 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-8-25journal",
+            },{id: "post-爱情",
       
-        title: "8.25Journal",
+        title: "爱情",
       
-      description: "Daily journal after a meaningful week",
+      description: "though on love",
       section: "Posts",
       handler: () => {
         
