@@ -80,7 +80,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/journal/";
+          window.location.href = "/blog/2025/love/";
         
       },
     },{id: "post-an-end-at-a2",
