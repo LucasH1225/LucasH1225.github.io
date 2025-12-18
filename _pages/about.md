@@ -26,12 +26,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I study computer science in Oxford as a freshman. 
+I study computer science and philsophy in Oxford at the first year. 
 
-I am enthuasiast of algorithms, crptography, and game developing in high school at SCIE. 
-Now shift my focus on AI and software engineering. 
-
-As full-stack developer, I am now processing on a llm-based workflow APP on Swift(iOS).
+I am interested in number theory, algorithms, game developing in computer science area. 
+I am eager to explore more on daoism and stoicism, and keen to think about the connection between philosophy and the real world. 
 
 Besides, I love calligraphy and is an absolute fan of FC Barcelona.
 
