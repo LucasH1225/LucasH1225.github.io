@@ -72,18 +72,7 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-",
-      
-        title: "",
-      
-      description: "",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/2025-12-22-JiLin/";
-        
-      },
-    },{id: "post-philosophy-related-articles",
+            },{id: "post-philosophy-related-articles",
       
         title: "philosophy-related articles",
       
@@ -125,6 +114,17 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2025/competition/";
+        
+      },
+    },{id: "post-吉林之行小记",
+      
+        title: "吉林之行小记",
+      
+      description: "Trip to Jilin",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/JiLin/";
         
       },
     },{id: "post-love-copy",
