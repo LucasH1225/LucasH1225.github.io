@@ -72,9 +72,20 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-哲学文章",
+            },{id: "post-",
       
-        title: "哲学文章",
+        title: "",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/2025-12-22-JiLin/";
+        
+      },
+    },{id: "post-philosophy-related-articles",
+      
+        title: "philosophy-related articles",
       
       description: "Introduction about the philosophy-related articels",
       section: "Posts",
@@ -83,48 +94,37 @@ ninja.data = [{
           window.location.href = "/blog/2025/xu/";
         
       },
-    },{id: "post-哲学文章",
+    },{id: "post-self-discipline-and-pleasure-from-hedonism",
       
-        title: "哲学文章",
+        title: "Self-discipline and pleasure -- From Hedonism",
       
-      description: "Self-discipline and pleasure -- From Hedonism",
+      description: "start from the concept of hedonism to discuss what are we actually pursuing，and how this can be connected to the actual aim from self-discipline",
       section: "Posts",
       handler: () => {
         
           window.location.href = "/blog/2025/hedonism-copy/";
         
       },
-    },{id: "post-哲学文章",
+    },{id: "post-first-person-view-and-third-person-view-from-determinism",
       
-        title: "哲学文章",
+        title: "First-person view and third-person view -- From determinism",
       
-      description: "First-person view and third-person view -- From determinism",
+      description: "Start from determinism to discuss the practicability of first-person and third-person view",
       section: "Posts",
       handler: () => {
         
           window.location.href = "/blog/2025/determinism-copy-2/";
         
       },
-    },{id: "post-哲学文章",
+    },{id: "post-competition",
       
-        title: "哲学文章",
+        title: "Competition",
       
-      description: "Competition",
+      description: "discuss what should be our actual attitude toward competition, to face all the competition in the world.",
       section: "Posts",
       handler: () => {
         
           window.location.href = "/blog/2025/competition/";
-        
-      },
-    },{id: "post-吉林之行小记",
-      
-        title: "吉林之行小记",
-      
-      description: "Trip to Jilin",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2025/JiLin/";
         
       },
     },{id: "post-love-copy",
@@ -512,11 +512,11 @@ ninja.data = [{
           window.location.href = "/blog/2015/formatting-and-links/";
         
       },
-    },{id: "post-8-28天气阴",
+    },{id: "post-letter",
       
-        title: "8.28天气阴",
+        title: "Letter",
       
-      description: "letter",
+      description: "",
       section: "Posts",
       handler: () => {
         
