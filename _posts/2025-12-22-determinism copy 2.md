@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 哲学文章
+title: First-person view and third-person view -- From determinism 
 data: 2025-12-22 15:11:00
-description: First-person view and third-person view -- From determinism 
+description: Start from determinism to discuss the practicability of first-person and third-person view
 tags: articles 
 categories: sample-posts 
 

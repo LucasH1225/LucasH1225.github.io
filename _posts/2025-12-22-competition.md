@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 哲学文章
+title: Competition
 data: 2025-12-22 15:11:00
-description: Competition 
+description: discuss what should be our actual attitude toward competition, to face all the competition in the world. 
 tags: articles 
 categories: sample-posts 
 

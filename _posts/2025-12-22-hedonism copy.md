@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 哲学文章
+title: Self-discipline and pleasure -- From Hedonism 
 data: 2025-12-22 15:11:00
-description: Self-discipline and pleasure -- From Hedonism 
+description: start from the concept of hedonism to discuss what are we actually pursuing，and how this can be connected to the actual aim from self-discipline
 tags: articles 
 categories: sample-posts 
 
