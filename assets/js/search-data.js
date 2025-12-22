@@ -72,15 +72,70 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "post-爱情",
+            },{id: "post-哲学文章",
       
-        title: "爱情",
+        title: "哲学文章",
       
-      description: "though on love",
+      description: "Introduction about the philosophy-related articels",
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/love/";
+          window.location.href = "/blog/2025/xu/";
+        
+      },
+    },{id: "post-哲学文章",
+      
+        title: "哲学文章",
+      
+      description: "Self-discipline and pleasure -- From Hedonism",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/hedonism-copy/";
+        
+      },
+    },{id: "post-哲学文章",
+      
+        title: "哲学文章",
+      
+      description: "First-person view and third-person view -- From determinism",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/determinism-copy-2/";
+        
+      },
+    },{id: "post-哲学文章",
+      
+        title: "哲学文章",
+      
+      description: "Competition",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/competition/";
+        
+      },
+    },{id: "post-吉林之行小记",
+      
+        title: "吉林之行小记",
+      
+      description: "Trip to Jilin",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/JiLin/";
+        
+      },
+    },{id: "post-love-copy",
+      
+        title: "Love copy",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/love-copy/";
         
       },
     },{id: "post-an-end-at-a2",
