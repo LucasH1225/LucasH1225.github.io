@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+  <rect width="900" height="420" fill="#eef1ef"/>
+  <g fill="none" stroke="#8b9b83" stroke-width="2">
+    <path d="M232 174h32m-8-6 8 6-8 6M432 174h32m-8-6 8 6-8 6M632 174h32m-8-6 8 6-8 6"/>
+    <path d="M148 251v47h600v-47" stroke-dasharray="5 5"/>
+  </g>
+  <g fill="#f8f9fa" stroke="#c8d2c4">
+    <rect x="64" y="112" width="168" height="139" rx="8"/>
+    <rect x="264" y="112" width="168" height="139" rx="8"/>
+    <rect x="464" y="112" width="168" height="139" rx="8"/>
+    <rect x="664" y="112" width="168" height="139" rx="8"/>
+  </g>
+  <g text-anchor="middle" font-family="system-ui, sans-serif" fill="#263b24">
+    <g font-size="20" font-weight="600"><text x="148" y="162">Research</text><text x="348" y="162">Design</text><text x="548" y="162">Build</text><text x="748" y="162">Check</text></g>
+    <g font-size="14" fill="#596359"><text x="148" y="196">Facts and sources</text><text x="348" y="196">Purpose and identity</text><text x="548" y="196">A working page</text><text x="748" y="196">Content and use</text></g>
+    <text x="450" y="333" font-size="15" fill="#596359">Keep the source information throughout.</text>
+  </g>
+</svg>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A collaborative local multiplayer 3D combat prototype where weapon contact drives both movement and fighting.">
+<meta name="theme-color" content="#f8f9fa">
+<meta name="author" content="Lucas Han">
+<meta property="og:title" content="Wankai — Lucas Han">
+<meta property="og:description" content="A collaborative local multiplayer 3D combat prototype where weapon contact drives both movement and fighting.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://haojunhan.com/projects/wankai/">
+<meta property="og:image" content="https://haojunhan.com/assets/personal/wankai-arena.webp">
+<meta property="og:site_name" content="Lucas Han">
+<link rel="canonical" href="https://haojunhan.com/projects/wankai/">
+<link rel="icon" href="/assets/personal/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/personal/fonts/Manrope.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="/assets/personal/site.css?v=20261023">
+<link rel="alternate" type="application/atom+xml" title="Lucas Han — Writing" href="/feed.xml">
+
+<title>Wankai — Lucas Han</title>
+
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+  <nav class="main-nav" aria-label="Main navigation">
+    
+      <a href="/">about</a>
+    
+      <a href="/projects/" class="is-current">projects</a>
+    
+      <a href="/blog/">writing</a>
+    
+  </nav>
+  <a class="cv-link" href="/assets/personal/lucas-han-cv.pdf">CV <span class="file-type">PDF</span></a>
+</header>
+
+      <main id="main">
+        <article class="case-study">
+  <a class="back-link" href="/projects/"><span aria-hidden="true">←</span> All projects</a>
+  <header class="case-header">
+    <h1>Wankai</h1>
+    <p class="case-lead">A physics-driven fighting game where the weapon that hits your opponent also gets you across the arena.</p>
+    <dl class="project-facts">
+      <div><dt>Status</dt><dd>Playable prototype</dd></div>
+      <div><dt>Play</dt><dd>Local multiplayer</dd></div>
+      <div><dt>Built with</dt><dd>React, Three.js, Electron</dd></div>
+    </dl>
+    <p class="contribution">My recent contributions: playable characters, the preparation interface, and arena integration.</p>
+  </header>
+  
+    <figure class="project-hero">
+      <img src="/assets/personal/wankai-arena.webp" alt="Two animal fighters facing each other in Wankai&#39;s 3D Colosseum arena" width="900" height="531" fetchpriority="high">
+      <figcaption>The local Colosseum arena. Visual and camera work continues alongside the playable prototype.</figcaption>
+    </figure>
+  
+  <div class="case-prose">
+    <h2 id="one-action-two-purposes">One action, two purposes</h2>
+
+<p>In Wankai, moving and attacking are part of the same physical interaction. A player swings and turns a weapon; when it meets the ground, the contact can lift or propel the character. The next swing might be a way to reposition, land a hit or recover from a bad angle.</p>
+
+<p>That shared mechanic makes the character’s relationship with the ground important. There is no separate conventional movement control to hide behind. The game has to make force, contact and inertia readable enough for players to learn through experimentation.</p>
+
+<h2 id="making-contact-feel-consistent">Making contact feel consistent</h2>
+
+<p>The prototype uses a custom fixed-timestep physics system rather than treating each swing as a canned animation. Constraints connect the character and weapon, while collision handling supports ground contact, hits and blocks. Weapon geometry affects reach, turning and contact, giving equipment choices consequences beyond appearance.</p>
+
+<p>Two players share a keyboard. Split-screen and fixed-camera modes use the same underlying rules, with practice and solo views available for exploring the controls. Camera framing is its own design problem: it must explain the action without changing what the simulation does.</p>
+
+<h2 id="characters-are-part-of-the-mechanic">Characters are part of the mechanic</h2>
+
+<p>My recent work has included integrating a beagle with a long-ear fighting setup and a seated orange tabby with independent giant paws. A character needs more than a model: its approved motion, contact points and controls have to survive the transition into actual play.</p>
+
+<p>The asset workflow combines AI-assisted generation, Tripo base models and Blender preparation with runtime integration. Reviewing motion before integration helps catch a model that looks convincing in a still but fails when it swings, turns or supports its body.</p>
+
+<figure class="inline-figure">
+  <img src="/assets/personal/wankai-preparation.webp" alt="The full-window preparation screen with separate character and weapon choices and model previews for two players" width="1500" height="742" loading="lazy" />
+  <figcaption>The preparation interface gives each player a separate loadout and ready state before the match starts.</figcaption>
+</figure>
+
+<h2 id="preparing-a-match">Preparing a match</h2>
+
+<p>The preparation screen brings both players into one full-window view. Each side selects a valid character and weapon, inspects the actual model, and marks itself ready. Changing a choice cancels that player’s readiness; the match starts after both sides are ready. Returning to the menu abandons the draft rather than silently changing the previous setup.</p>
+
+<p>This work connects interface state with game state: a selection should describe what will actually spawn, and menu inputs should never leak into combat. The arena work follows the same principle, matching the visible floor and physical boundary while keeping the existing simulation intact.</p>
+
+<h2 id="collaboration-and-current-status">Collaboration and current status</h2>
+
+<p>Wankai is a collaborative project in the <a href="https://github.com/Gumssss/Wankai">Gumssss/Wankai repository</a>. My recent contributions cover character production and integration, the preparation interface, and local arena/camera work, developed with AI-assisted coding. The shared repository and its asset records retain the wider project and model credits.</p>
+
+<p>The current result is a playable local prototype. Some newer local arena work may be ahead of the shared source checkpoint. There is no packaged application release, and Windows/Linux have not been validated. Further work is about playtesting, tuning contact and making the controls easier to understand.</p>
+
+    <div class="case-end"><a href="/projects/">Back to projects</a><a href="mailto:lucashan1225@gmail.com?subject=Wankai">Get in touch</a></div>
+  </div>
+</article>
+
+      </main>
+      <footer class="site-footer"><span>© 2026 Lucas Han</span><span>Oxford &amp; Shenzhen</span></footer>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A native Mac and iPhone assistant that turns text, dictated speech and images into connected, editable Obsidian records.">
+<meta name="theme-color" content="#f8f9fa">
+<meta name="author" content="Lucas Han">
+<meta property="og:title" content="Personal AI Assistant — Lucas Han">
+<meta property="og:description" content="A native Mac and iPhone assistant that turns text, dictated speech and images into connected, editable Obsidian records.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://haojunhan.com/projects/personal-ai-assistant/">
+<meta property="og:image" content="https://haojunhan.com/assets/personal/assistant-thumb.webp">
+<meta property="og:site_name" content="Lucas Han">
+<link rel="canonical" href="https://haojunhan.com/projects/personal-ai-assistant/">
+<link rel="icon" href="/assets/personal/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/personal/fonts/Manrope.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="/assets/personal/site.css?v=20261023">
+<link rel="alternate" type="application/atom+xml" title="Lucas Han — Writing" href="/feed.xml">
+<script src="/assets/personal/project.js?v=20261023" defer></script>
+<title>Personal AI Assistant — Lucas Han</title>
+
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+  <nav class="main-nav" aria-label="Main navigation">
+    
+      <a href="/">about</a>
+    
+      <a href="/projects/" class="is-current">projects</a>
+    
+      <a href="/blog/">writing</a>
+    
+  </nav>
+  <a class="cv-link" href="/assets/personal/lucas-han-cv.pdf">CV <span class="file-type">PDF</span></a>
+</header>
+
+      <main id="main">
+        <article class="case-study">
+  <a class="back-link" href="/projects/"><span aria-hidden="true">←</span> All projects</a>
+  <header class="case-header">
+    <h1>Personal AI Assistant</h1>
+    <p class="case-lead">Turning everyday words, voice messages, and images into connected, editable personal records.</p>
+    <dl class="project-facts">
+      <div><dt>Status</dt><dd>In development</dd></div>
+      <div><dt>Platforms</dt><dd>macOS & iOS</dd></div>
+      <div><dt>Built with</dt><dd>Swift, SwiftUI</dd></div>
+    </dl>
+    
+  </header>
+  
+    <figure class="app-showcase">
+          <div class="showcase-toolbar">
+            <span>The People view</span>
+            <div class="platform-tabs" role="tablist" aria-label="Screenshot platform" hidden>
+              <button id="tab-mac" type="button" role="tab" aria-selected="true" aria-controls="screenshot-panel" data-platform="mac">Mac</button>
+              <button id="tab-iphone" type="button" role="tab" aria-selected="false" aria-controls="screenshot-panel" tabindex="-1" data-platform="iphone">iPhone</button>
+            </div>
+          </div>
+          <div class="showcase-stage" id="screenshot-panel" role="tabpanel" aria-labelledby="tab-mac" tabindex="0">
+            <img id="platform-screenshot" src="/assets/personal/assistant-explore.webp" alt="The native Mac People view, showing connections between fictional records" width="880" height="999" fetchpriority="high">
+          </div>
+          <figcaption><span id="screenshot-caption">Native Mac Explore view. Fictional records used for demonstration.</span><a id="screenshot-full" href="/assets/personal/assistant-explore.webp">View full image</a></figcaption>
+          <noscript><p class="noscript-note"><a href="/assets/personal/assistant-iphone.webp">View the iPhone screenshot</a></p></noscript>
+        </figure>
+
+  
+  <div class="case-prose">
+    <section aria-labelledby="why-title">
+  <h2 id="why-title">A thought is easy to capture.<br />Making it useful takes more work.</h2>
+  <p>A conversation, a plan, a meal, an idea: everyday information rarely arrives neatly organised. This project starts with a simple question—can an assistant turn that input into useful records while keeping the original context?</p>
+  <p>The app captures text, dictated speech, and images, then connects the resulting notes in a user-controlled Obsidian vault. The native interface provides ways to explore people, events, goals, and the moments linking them.</p>
+</section>
+
+<section aria-labelledby="approach-title">
+  <h2 id="approach-title">Capture, connect, and stay in control</h2>
+  <ol class="capture-flow">
+    <li><strong>Capture</strong><span>Keep the original words or image.</span></li>
+    <li><strong>Check</strong><span>Validate the proposed records against their source.</span></li>
+    <li><strong>Connect</strong><span>Save linked Markdown records in the vault.</span></li>
+    <li><strong>Correct</strong><span>Edit the result or undo the capture.</span></li>
+  </ol>
+  <p>The engineering work centres on the boundary between interpretation and action: what did the input actually say, what can safely be inferred, and what should remain unresolved?</p>
+</section>
+
+<section aria-labelledby="decisions-title">
+  <h2 id="decisions-title">A few decisions that matter</h2>
+  <div class="decision-list">
+    <div><h3>The source stays with the record</h3><p>Original inputs are retained in History. Evidence checks help constrain dates, events, and measured values to what the source supports.</p></div>
+    <div><h3>Automation should be reversible</h3><p>Duplicate checks, staged saves, corrections, and edit-aware Undo help protect the vault when interpretation fails or a record changes later.</p></div>
+    <div><h3>Ordinary files, native interfaces</h3><p>The records remain Markdown in an Obsidian vault. Mac and iPhone interfaces share capture logic and SwiftUI features, with platform-specific input where needed.</p></div>
+  </div>
+</section>
+
+<section class="project-status-note" aria-labelledby="status-title">
+  <h2 id="status-title">Where it is now</h2>
+  <p>A working native prototype, developed with AI-assisted coding and automated regression checks. Device-specific capture, cross-device behaviour, and Calendar/Reminders integrations are still being validated.</p>
+  <p>Interpretation currently uses a model provider. Local model experiments are exploratory; this is not yet a fully offline assistant.</p>
+</section>
+
+    <div class="case-end"><a href="/projects/">Back to projects</a><a href="mailto:lucashan1225@gmail.com?subject=Personal+AI+Assistant">Get in touch</a></div>
+  </div>
+</article>
+
+      </main>
+      <footer class="site-footer"><span>© 2026 Lucas Han</span><span>Oxford &amp; Shenzhen</span></footer>
+
+    </div>
+  </body>
+</html>

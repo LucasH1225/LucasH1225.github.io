@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An ongoing study of hybrid Q-learning and structured planning for coverage and boundary service in grid simulation.">
+<meta name="theme-color" content="#f8f9fa">
+<meta name="author" content="Lucas Han">
+<meta property="og:title" content="Learning and Planning for Robot Coverage — Lucas Han">
+<meta property="og:description" content="An ongoing study of hybrid Q-learning and structured planning for coverage and boundary service in grid simulation.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://haojunhan.com/projects/robot-coverage/">
+<meta property="og:image" content="https://haojunhan.com/assets/personal/robot-coverage.webp">
+<meta property="og:site_name" content="Lucas Han">
+<link rel="canonical" href="https://haojunhan.com/projects/robot-coverage/">
+<link rel="icon" href="/assets/personal/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/personal/fonts/Manrope.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="/assets/personal/site.css?v=20261023">
+<link rel="alternate" type="application/atom+xml" title="Lucas Han — Writing" href="/feed.xml">
+
+<title>Learning and Planning for Robot Coverage — Lucas Han</title>
+
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+  <nav class="main-nav" aria-label="Main navigation">
+    
+      <a href="/">about</a>
+    
+      <a href="/projects/" class="is-current">projects</a>
+    
+      <a href="/blog/">writing</a>
+    
+  </nav>
+  <a class="cv-link" href="/assets/personal/lucas-han-cv.pdf">CV <span class="file-type">PDF</span></a>
+</header>
+
+      <main id="main">
+        <article class="case-study">
+  <a class="back-link" href="/projects/"><span aria-hidden="true">←</span> All projects</a>
+  <header class="case-header">
+    <h1>Learning and Planning for Robot Coverage</h1>
+    <p class="case-lead">Combining learned decisions with structured planning to cover cluttered spaces—and understanding what each part contributes.</p>
+    <dl class="project-facts">
+      <div><dt>Status</dt><dd>Research in progress</dd></div>
+      <div><dt>Setting</dt><dd>Grid simulation</dd></div>
+      <div><dt>Built with</dt><dd>Python, PyTorch, Webots</dd></div>
+    </dl>
+    
+  </header>
+  
+    <figure class="project-hero">
+      <img src="/assets/personal/robot-coverage.webp" alt="Two grid simulations comparing A-star planning and a hybrid learned coverage controller" width="900" height="506" fetchpriority="high">
+      <figcaption>An illustrative paired simulation. One trajectory is not evidence of general superiority.</figcaption>
+    </figure>
+  
+  <div class="case-prose">
+    <h2 id="visiting-the-whole-space">Visiting the whole space</h2>
+
+<p>A robot can make sensible local moves and still leave small pockets of a room untouched. Covering an entire work area asks a different question from finding a route to one destination: how should the robot keep moving while recovering the regions it has missed?</p>
+
+<p>This research explores that question through a hybrid controller. A compact Q network scores actions, while structured planning routines handle routing, turns, stagnation and remaining uncovered regions. The current task also requires service around certain obstacle boundaries, so finishing the floor alone does not count as completing the full task.</p>
+
+<h2 id="learning-chooses-within-a-structure">Learning chooses within a structure</h2>
+
+<p>The learned component does not directly issue wheel commands. It selects among constrained movement and higher-level routines, including seeking uncovered cells and approaching or tracing obstacle boundaries. Action masks and persistent routine state determine which choices are feasible.</p>
+
+<p>This makes the division of responsibility central to the project. A successful trajectory may owe as much to deterministic recovery as to a Q value. The evaluation therefore compares the complete system with a fixed-rule scheduler using the same routines, an A* comparator, and a version with a residual-region guard disabled.</p>
+
+<figure class="inline-figure">
+  <a href="/assets/personal/robot-decision-stack.webp"><img src="/assets/personal/robot-decision-stack.webp" alt="Decision-stack diagram separating observed map and pose information from simulator-derived obstacle-service information entering the hybrid controller" width="1500" height="775" loading="lazy" /></a>
+  <figcaption>The decision stack from the working manuscript. Simulator-derived task information is a disclosed input, not a sensor measurement. <a href="/assets/personal/robot-decision-stack.webp">View the diagram</a></figcaption>
+</figure>
+
+<h2 id="what-the-experiments-currently-show">What the experiments currently show</h2>
+
+<p>The working manuscript separates historical development from a prospective holdout of 900 paired, 32 × 32 grid episodes across nine scenario families. Under the specified joint coverage-and-service protocol:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Controller</th>
+      <th style="text-align: right">Completed tasks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Selected hybrid configuration</td>
+      <td style="text-align: right">900 / 900</td>
+    </tr>
+    <tr>
+      <td>Nearest-uncovered/frontier A* comparator</td>
+      <td style="text-align: right">874 / 900</td>
+    </tr>
+    <tr>
+      <td>Fixed-rule scheduler with shared routines</td>
+      <td style="text-align: right">882 / 900</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Completion and efficiency tell different stories. On the episodes completed by both systems, A* was faster in simulated motion time than the selected hybrid configuration. The hybrid was faster than the rule scheduler on their mutually completed episodes. The residual-region guard also reduced motion time in its matched comparison, although both guard settings completed all 900 tasks.</p>
+
+<p>These are results for one selected training lineage and a fixed simulator distribution. They support examining the scheduler and recovery rules under this protocol; they do not establish superiority over all classical planners or robustness across independently trained policies.</p>
+
+<h2 id="the-information-boundary-matters">The information boundary matters</h2>
+
+<p>The evaluated controller is <strong>oracle-assisted</strong>: some obstacle-service labels, component identities and progress-dependent rules use simulator truth. Restricting hidden collision information during policy previews does not make the whole decision stack sensor-only. Pose and heading are also assumed exact.</p>
+
+<p>Making those assumptions explicit has become part of the research itself. Reproducible comparisons require recording what each controller knows, using matched maps and motion costs, and distinguishing floor coverage from the additional service endpoint.</p>
+
+<h2 id="where-it-is-now">Where it is now</h2>
+
+<p>The manuscript is in preparation. Current work centres on checking the evidence, documenting the information contract and keeping the results separate from broader claims. This is a simulation study; the complete system has not been validated as a sensor-only controller on a real robot.</p>
+
+    <div class="case-end"><a href="/projects/">Back to projects</a><a href="mailto:lucashan1225@gmail.com?subject=Learning+and+Planning+for+Robot+Coverage">Get in touch</a></div>
+  </div>
+</article>
+
+      </main>
+      <footer class="site-footer"><span>© 2026 Lucas Han</span><span>Oxford &amp; Shenzhen</span></footer>
+
+    </div>
+  </body>
+</html>
