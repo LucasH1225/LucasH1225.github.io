@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+TASK_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$TASK_ROOT"
+if [[ -x "$TASK_ROOT/vendor/runtime/ruby-3.3.5/bin/ruby" ]]; then
+  export PATH="$TASK_ROOT/vendor/runtime/ruby-3.3.5/bin:$TASK_ROOT/vendor/gems/bin:$PATH"
+  export GEM_HOME="$TASK_ROOT/vendor/gems"
+  export GEM_PATH="$TASK_ROOT/vendor/gems"
+fi
+export GEM_SPEC_CACHE="$TASK_ROOT/vendor/gem-specs"
+export BUNDLE_USER_HOME="$TASK_ROOT/vendor/bundler"
+export BUNDLE_PATH="$TASK_ROOT/vendor/bundle"
+case "${1:-build}" in
+  setup)
+    gem install bundler -v 2.6.5 --no-document
+    BUNDLE_FROZEN=true bundle install
+    ;;
+  build)
+    BUNDLE_FROZEN=true bundle exec jekyll clean
+    JEKYLL_ENV=production BUNDLE_FROZEN=true bundle exec jekyll build --trace
+    python3 scripts/check_site.py
+    ;;
+  preview)
+    python3 scripts/preview.py --port "${2:-8768}"
+    ;;
+  check)
+    python3 scripts/check_site.py
+    ;;
+  *)
+    echo 'Usage: scripts/site {setup|build|preview [port]|check}' >&2
+    exit 2
+    ;;
+esac

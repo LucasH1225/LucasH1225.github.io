@@ -1,0 +1,23 @@
+name: Lucas Han
+affiliation: Computer Science and Philosophy at Oxford
+email: lucashan1225@gmail.com
+github: https://github.com/LucasH1225
+cv: /assets/personal/lucas-han-cv.pdf
+locations: Oxford & Shenzhen
+asset_version: "20261023"
+navigation:
+  - label: about
+    url: /
+    section: about
+  - label: projects
+    url: /projects/
+    section: projects
+  - label: writing
+    url: /blog/
+    section: writing
+essay:
+  title: Should AI speech be limited?
+  year: 2026
+  summary: On human-directed and model-led speech, moral responsibility, and what should justify restrictions on AI-generated communication.
+  context: Bernard Williams Essay Prize entry, Institute for Ethics in AI.
+  status: Result pending. Full text to follow after the prize process.

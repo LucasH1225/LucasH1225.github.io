@@ -1,0 +1,21 @@
+{% assign description = page.description | default: site.description | strip_html | normalize_whitespace %}
+{% assign image = page.social_image | default: page.image | default: '/assets/personal/lucas-han.jpg' %}
+{% capture document_title %}{% if page.home %}{{ site.title }}{% else %}{{ page.title }} — {{ site.title }}{% endif %}{% endcapture %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ description | escape }}">
+<meta name="theme-color" content="#f8f9fa">
+<meta name="author" content="{{ site.author | escape }}">
+<meta property="og:title" content="{{ document_title | strip | escape }}">
+<meta property="og:description" content="{{ description | escape }}">
+<meta property="og:type" content="{% if page.collection == 'posts' or page.collection == 'projects' %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ image | absolute_url }}">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="icon" href="{{ '/assets/personal/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preload" href="{{ '/assets/personal/fonts/Manrope.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/personal/site.css' | relative_url }}?v={{ site.data.personal.asset_version }}">
+<link rel="alternate" type="application/atom+xml" title="Lucas Han — Writing" href="{{ '/feed.xml' | relative_url }}">
+{% if page.showcase == 'assistant' %}<script src="{{ '/assets/personal/project.js' | relative_url }}?v={{ site.data.personal.asset_version }}" defer></script>{% endif %}
+<title>{{ document_title | strip | escape }}</title>

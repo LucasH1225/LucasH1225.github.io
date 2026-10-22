@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | escape }}">
+  <head>
+    {% include personal/head.liquid %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      {% include personal/header.liquid %}
+      <main id="main">
+        {{ content }}
+      </main>
+      {% include personal/footer.liquid %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+---
+layout: personal
+---
+<article class="case-study">
+  <a class="back-link" href="{{ '/projects/' | relative_url }}"><span aria-hidden="true">←</span> All projects</a>
+  <header class="case-header">
+    <h1>{{ page.title }}</h1>
+    <p class="case-lead">{{ page.lead }}</p>
+    <dl class="project-facts">
+      <div><dt>Status</dt><dd>{{ page.status }}</dd></div>
+      <div><dt>{{ page.context_label | default: 'Focus' }}</dt><dd>{{ page.context }}</dd></div>
+      <div><dt>Built with</dt><dd>{{ page.stack }}</dd></div>
+    </dl>
+    {% if page.role %}<p class="contribution">{{ page.role }}</p>{% endif %}
+  </header>
+  {% if page.showcase == 'assistant' %}
+    {% include personal/assistant-showcase.liquid %}
+  {% else %}
+    <figure class="project-hero">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | escape }}" width="{{ page.image_width }}" height="{{ page.image_height }}" fetchpriority="high">
+      <figcaption>{{ page.image_caption }}</figcaption>
+    </figure>
+  {% endif %}
+  <div class="case-prose">
+    {{ content }}
+    <div class="case-end"><a href="{{ '/projects/' | relative_url }}">Back to projects</a><a href="mailto:{{ site.email }}?subject={{ page.title | url_encode }}">Get in touch</a></div>
+  </div>
+</article>

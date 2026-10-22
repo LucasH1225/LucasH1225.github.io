@@ -1,14 +1,16 @@
 ---
-layout: post
-title: First-person view and third-person view -- From determinism 
-data: 2025-12-22 15:11:00
-description: Start from determinism to discuss the practicability of first-person and third-person view
-tags: articles 
-categories: sample-posts 
-
+layout: personal-post
+title: First-person view and third-person view -- From determinism
+date: 2025-12-22
+permalink: /blog/2025/determinism-copy-2/
+lang: en
+topic: Philosophy
+writing_order: 1
+description: Thinking through determinism and the practical difference between first-person and third-person perspectives.
+home_title: First-person and third-person perspectives
+selected: true
+selected_order: 1
 ---
-# First-person view and third-person view -- From determinism 
-
 ## What is determinsim?
 
 Determinism is formally defined as: For any time t, the complete state of the world at time t together with laws of nature logically entails the complete state of the world at any later time. 
@@ -16,8 +18,8 @@ Determinism is formally defined as: For any time t, the complete state of the wo
 And it is stated by the philosopher Peter Van Inwagen that people couldn't have done any steps given the assumption that determinsim is true: 
 
 - We are discussing about a people A doing action B. 
-- We are using the complete state of the world at time $T_0$, which is before the birth of A, we referred it to $P_0$. And now when we refer to the complete state of the world when A's doing action B as P, we can logically entails P by $P_0$ and the law of nature, by the definition of determinism. 
-- Consider the scenario that people A instead doesn't do action B but any other action C. In this case, it is an observable change in the complete state of the world, so the state can no longer be P, it is the people A (or action C) renders P false. However, while one cannot render the law of nature false, one can also cannot affect the world at the moment that he doesn't even exist at time $T_0$, so they form a contradiction that the conjunction of two true statement leads to (entails) a false statement. So it is stated that people couldn't have done anything other than the action they actually did. 
+- We are using the complete state of the world at time <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="T subscript zero"><msub><mi>T</mi><mn>0</mn></msub></math>, which is before the birth of A, we referred it to <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="P subscript zero"><msub><mi>P</mi><mn>0</mn></msub></math>. And now when we refer to the complete state of the world when A's doing action B as P, we can logically entails P by <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="P subscript zero"><msub><mi>P</mi><mn>0</mn></msub></math> and the law of nature, by the definition of determinism.
+- Consider the scenario that people A instead doesn't do action B but any other action C. In this case, it is an observable change in the complete state of the world, so the state can no longer be P, it is the people A (or action C) renders P false. However, while one cannot render the law of nature false, one can also cannot affect the world at the moment that he doesn't even exist at time <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="T subscript zero"><msub><mi>T</mi><mn>0</mn></msub></math>, so they form a contradiction that the conjunction of two true statement leads to (entails) a false statement. So it is stated that people couldn't have done anything other than the action they actually did.
 
 It leads to the version of determinism that is easier to understand: Every action of people's act is determined (completely fixed) by all the past events and law of nature. 
 
@@ -42,4 +44,4 @@ I believe the third-person view do make a difference when dealing with specific 
 
 As what I just mention, you can act like and is actually watching a movie of a person who may doesn't related to you at all in a third person view. This can bring us to the most naive and ideal state: It can be analogued to the state the artists and calligraphers pursue -- the child state -- you are observing and discovering yourself with the pure interest on a person. In order to try to overcome self-ego, using third-person view to learn yourself from the start should be attempted. 
 
-From another point of view, it can also help you adjust your instant emotions. I would try to use the third-person view when I feel nervous and I would rather not, as the negative feelings might somehow affect my perfomances. Switching to third-person view give me a sense of peace, and when I switch back to myself, I would have better state to face the upcoming challenge. For me, it is like a cheatsheet, I would definitely use first-person view to expreience the extreme happiness and joy, and use the third-person view to try to avoid the extreme negative feelings. Even though all of this is corresponding to each other, I believe I make myself the most comfort through my control on myself. 
+From another point of view, it can also help you adjust your instant emotions. I would try to use the third-person view when I feel nervous and I would rather not, as the negative feelings might somehow affect my perfomances. Switching to third-person view give me a sense of peace, and when I switch back to myself, I would have better state to face the upcoming challenge. For me, it is like a cheatsheet, I would definitely use first-person view to expreience the extreme happiness and joy, and use the third-person view to try to avoid the extreme negative feelings. Even though all of this is corresponding to each other, I believe I make myself the most comfort through my control on myself.

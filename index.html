@@ -1,0 +1,39 @@
+---
+layout: personal
+title: Lucas Han
+home: true
+section: about
+---
+<section class="intro" aria-labelledby="intro-title">
+          <div class="intro-copy">
+            <h1 id="intro-title">Lucas Han</h1>
+            <p class="affiliation">Computer Science and Philosophy at Oxford</p>
+            <div class="bio">
+              <p>I’m an undergraduate at <a href="https://www.stcatz.ox.ac.uk/">St Catherine’s College</a>, University of Oxford.</p>
+              <p>I build personal AI tools, investigate how robots cover unfamiliar spaces, and make physics-driven games. I’m interested in how the systems we build connect with questions of agency, responsibility, and everyday life.</p>
+              <p>Outside of this, I enjoy calligraphy and support FC Barcelona.</p>
+            </div>
+            <div class="contact-links" aria-label="Contact and profiles">
+              <a href="mailto:lucashan1225@gmail.com">lucashan1225@gmail.com</a>
+              <a href="https://github.com/LucasH1225">GitHub</a>
+            </div>
+          </div>
+          <img class="portrait" src="/assets/personal/lucas-han.jpg" alt="Lucas Han beside the waterfront" width="600" height="780" fetchpriority="high">
+        </section>
+
+        <section class="home-section" id="projects" aria-labelledby="projects-title">
+          <h2 id="projects-title">Selected projects</h2>
+          <div class="project-list">
+            {% assign featured_projects = site.projects | where: 'featured', true | sort: 'featured_order' %}
+            {% for project in featured_projects %}{% include personal/project-row.liquid project=project %}{% endfor %}
+          </div>
+        </section>
+
+        <section class="home-section writing-section" id="writing" aria-labelledby="writing-title">
+          <h2 id="writing-title">Selected writing</h2>
+          {% include personal/featured-essay.liquid %}
+          <div class="earlier-writing" aria-label="Earlier essays">
+            {% assign selected_posts = site.posts | where: 'selected', true | sort: 'selected_order' %}
+            {% for post in selected_posts %}<a href="{{ post.url | relative_url }}"><span>{{ post.home_title }}</span><span class="writing-meta">{{ post.topic }} <span aria-hidden="true">/</span> {{ post.date | date: '%Y' }}</span></a>{% endfor %}
+          </div>
+        </section>

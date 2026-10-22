@@ -1,65 +1,29 @@
 ---
-layout: page
-title: projects
+layout: personal
+title: Projects
+description: Personal AI tools, robot coverage research, physics-driven games, and reusable website-building workflows.
 permalink: /projects/
-description: A growing collection of your cool projects.
-nav: true
-nav_order: 3
-display_categories: [work, fun]
-horizontal: false
+section: projects
 ---
-
-<!-- pages/projects.md -->
-<div class="projects">
-{% if site.enable_project_categories and page.display_categories %}
-  <!-- Display categorized projects -->
-  {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
-  </a>
-  {% assign categorized_projects = site.projects | where: "category", category %}
-  {% assign sorted_projects = categorized_projects | sort: "importance" %}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal %}
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
+<header class="index-header">
+  <h1>Projects</h1>
+  <p>Tools for everyday life, experiments in robot planning, and games built around physical interaction.</p>
+</header>
+<section aria-labelledby="selected-projects-title">
+  <h2 class="index-section-title" id="selected-projects-title">Selected projects</h2>
+  <div class="project-list">
+    {% assign projects = site.projects | where: 'featured', true | sort: 'featured_order' %}
+    {% for project in projects %}{% include personal/project-row.liquid project=project %}{% endfor %}
   </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
+</section>
+<section class="secondary-projects" aria-labelledby="workflow-title">
+  <h2 class="index-section-title" id="workflow-title">Tools and workflows</h2>
+  {% assign workflows = site.projects | where: 'featured', false | sort: 'order' %}
+  {% for project in workflows %}
+  <article class="secondary-project">
+    <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+    <p>{{ project.summary }}</p>
+    <div class="project-bottom"><span class="technology">{{ project.stack }}</span><span class="status">{{ project.status }}</span></div>
+  </article>
   {% endfor %}
-
-{% else %}
-
-<!-- Display projects without categories -->
-
-{% assign sorted_projects = site.projects | sort: "importance" %}
-
-  <!-- Generate cards for each project -->
-
-{% if page.horizontal %}
-
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-{% endif %}
-</div>
+</section>

@@ -1,0 +1,8 @@
+<header class="site-header">
+  <nav class="main-nav" aria-label="Main navigation">
+    {% for item in site.data.personal.navigation %}
+      <a href="{{ item.url | relative_url }}"{% if page.section == item.section %} class="is-current"{% if page.url == item.url %} aria-current="page"{% endif %}{% endif %}>{{ item.label }}</a>
+    {% endfor %}
+  </nav>
+  <a class="cv-link" href="{{ site.data.personal.cv | relative_url }}">CV <span class="file-type">PDF</span></a>
+</header>
