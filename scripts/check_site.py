@@ -9,12 +9,17 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = 'https://haojunhan.com'
-POSTS = ['competition', 'determinism-copy-2', 'hedonism-copy']
+POSTS = [
+    '/blog/2025/competition/',
+    '/blog/2025/determinism-copy-2/',
+    '/blog/2025/hedonism-copy/',
+    '/blog/2026/should-ai-speech-be-limited/',
+]
 EXPECTED = {'/', '/projects/', '/blog/', '/cv/', '/404.html'} | {
     f'/projects/{slug}/' for slug in (
         'personal-ai-assistant', 'robot-coverage', 'wankai', 'restaurant-website-workflow'
     )
-} | {f'/blog/2025/{slug}/' for slug in POSTS}
+} | set(POSTS)
 COMPATIBILITY = {'/blog/2025/A2life/', '/blog/2025/test/'}
 EXPECTED |= COMPATIBILITY
 

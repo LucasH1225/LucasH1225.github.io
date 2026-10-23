@@ -16,7 +16,7 @@ section: writing
 <section class="writing-archive" aria-labelledby="earlier-writing-title">
   <h2 class="index-section-title" id="earlier-writing-title">Earlier essays and notes</h2>
   <div class="writing-list">
-    {% assign posts = site.posts | sort: 'writing_order' %}
+    {% assign posts = site.posts | where_exp: 'post', 'post.featured_essay != true' | sort: 'writing_order' %}
     {% for post in posts %}
     <article class="writing-row">
       <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y' }}</time>

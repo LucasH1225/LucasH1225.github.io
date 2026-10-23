@@ -21,12 +21,12 @@ This checkout also has an ignored, locally compiled Ruby in `vendor/runtime/ruby
 - `index.html`: homepage biography and selected sections.
 - `_data/personal.yml`: navigation, contact information, asset version and competition-essay summary/status.
 - `_projects/`: four project case studies. Front matter supplies summaries to the homepage and projects index. `featured: true` and `featured_order` control homepage selection.
-- `_posts/`: three published philosophy essays and two original notes marked `published: false`. Explicit permalinks preserve the published articles’ addresses. `selected` and `selected_order` control homepage writing links.
+- `_posts/`: four published essays and two original notes marked `published: false`. Explicit permalinks preserve the published articles’ addresses. `selected` and `selected_order` control homepage writing links.
 - `_pages/`: projects/writing indexes, CV landing page, 404, and compatibility pages for two retired original placeholders.
 - `_layouts/`, `_includes/personal/`: shared presentation.
 - `assets/personal/`: CSS, screenshot interaction, local font, project media and CV PDF.
 
-Keep the full competition essay out of public source/output until the author elects to publish after the prize process. Do not infer an award or result from the date. Project status and contribution claims should track the actual implementation.
+The author authorised publication of “Should AI speech be limited?” on 23 October 2026. Its full article is published at `/blog/2026/should-ai-speech-be-limited/`, using the final-essay tab of the original document. Keep its competition status as result pending until a result is confirmed; do not infer an award from the date. Project status and contribution claims should track the actual implementation.
 
 Use `asset_version` in `_data/personal.yml` when changing CSS/JS. Keep page descriptions, image alt text/dimensions and collaborator/asset credits current. Mathematical notation in the existing determinism essay uses native MathML, without a client-side library.
 
