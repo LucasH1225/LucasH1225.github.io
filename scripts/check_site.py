@@ -14,6 +14,7 @@ POSTS = [
     '/blog/2025/determinism-copy-2/',
     '/blog/2025/hedonism-copy/',
     '/blog/2026/should-ai-speech-be-limited/',
+    '/blog/2026/who-is-the-likeliest-to-seize-power-by-2035/',
 ]
 EXPECTED = {'/', '/projects/', '/blog/', '/cv/', '/404.html'} | {
     f'/projects/{slug}/' for slug in (
@@ -126,7 +127,7 @@ def check(site):
             errors.append(f'Unused theme asset: {relative}')
     feed = ET.parse(site/'feed.xml')
     if len(feed.findall('{http://www.w3.org/2005/Atom}entry')) != len(POSTS):
-        errors.append('Feed must contain exactly the published original posts')
+        errors.append('Feed must contain exactly the published posts')
     sitemap = ET.parse(site/'sitemap.xml')
     listed = {node.text for node in sitemap.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')}
     required = {ORIGIN + route for route in EXPECTED - COMPATIBILITY if route != '/404.html'}
@@ -134,7 +135,7 @@ def check(site):
         errors.append(f'Sitemap missing: {required - listed}')
     if errors:
         raise SystemExit('\n'.join(errors))
-    print(f'PASS: {len(paths)} pages, {references} local references, {len(POSTS)} original feed entries, sitemap, metadata and public-file inventory.')
+    print(f'PASS: {len(paths)} pages, {references} local references, {len(POSTS)} published feed entries, sitemap, metadata and public-file inventory.')
 
 
 if __name__ == '__main__':

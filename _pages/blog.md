@@ -1,22 +1,31 @@
 ---
 layout: personal
 title: Writing
-description: Essays and notes on AI speech, agency, philosophy, and everyday life.
+description: Essays and notes on AI safety, AI speech, agency, philosophy, and everyday life.
 permalink: /blog/
 section: writing
 ---
 <header class="index-header">
   <h1>Writing</h1>
-  <p>Essays and notes on agency, responsibility, and the ways we understand our lives.</p>
+  <p>Essays and notes on AI safety, agency, responsibility, and the ways we understand our lives.</p>
 </header>
 <section class="writing-feature" aria-labelledby="recent-writing-title">
   <h2 class="index-section-title" id="recent-writing-title">Recent writing</h2>
+  <div class="writing-list">
+    {% assign recent_posts = site.posts | where: 'recent', true %}
+    {% for post in recent_posts %}
+    <article class="writing-row">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y' }}</time>
+      <div><h3><a href="{{ post.url | relative_url }}"{% if post.lang %} lang="{{ post.lang }}"{% endif %}>{{ post.home_title | default: post.title }}</a></h3><p>{{ post.description }}</p><span class="writing-meta">{{ post.topic }}{% if post.status %} · {{ post.status }}{% endif %}</span></div>
+    </article>
+    {% endfor %}
+  </div>
   {% include personal/featured-essay.liquid %}
 </section>
 <section class="writing-archive" aria-labelledby="earlier-writing-title">
   <h2 class="index-section-title" id="earlier-writing-title">Earlier essays and notes</h2>
   <div class="writing-list">
-    {% assign posts = site.posts | where_exp: 'post', 'post.featured_essay != true' | sort: 'writing_order' %}
+    {% assign posts = site.posts | where_exp: 'post', 'post.featured_essay != true and post.recent != true' | sort: 'writing_order' %}
     {% for post in posts %}
     <article class="writing-row">
       <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y' }}</time>

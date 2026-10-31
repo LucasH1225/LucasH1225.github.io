@@ -32,8 +32,8 @@ section: about
         <section class="home-section writing-section" id="writing" aria-labelledby="writing-title">
           <h2 id="writing-title">Selected writing</h2>
           {% include personal/featured-essay.liquid %}
-          <div class="earlier-writing" aria-label="Earlier essays">
+          <div class="earlier-writing" aria-label="More essays and notes">
             {% assign selected_posts = site.posts | where: 'selected', true | sort: 'selected_order' %}
-            {% for post in selected_posts %}<a href="{{ post.url | relative_url }}"><span>{{ post.home_title }}</span><span class="writing-meta">{{ post.topic }} <span aria-hidden="true">/</span> {{ post.date | date: '%Y' }}</span></a>{% endfor %}
+            {% for post in selected_posts %}<a href="{{ post.url | relative_url }}"><span>{{ post.home_title | default: post.title }}</span><span class="writing-meta">{{ post.topic }} <span aria-hidden="true">/</span> {{ post.date | date: '%Y' }}</span></a>{% endfor %}
           </div>
         </section>
