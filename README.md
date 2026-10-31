@@ -42,6 +42,8 @@ Review representative pages at 320, 390, 768, 1024 and 1280px, and check keyboar
 
 The workflow builds/checks pull requests, retains the checked artifact for 30 days, and deploys that same artifact only from `main`/`master` to the existing `gh-pages` branch. Changes on the working feature branch do not publish. No path filters can accidentally omit CSS, plugins or CNAME changes. Action revisions and Ruby dependencies are pinned.
 
+The build job uses `ubuntu-24.04`, which provides the pinned Ruby 3.3.5. Keep that compatible runner pinned when changing the workflow; the newer `ubuntu-latest` image does not provide this Ruby patch version.
+
 GitHub Pages was inspected on 23 October 2026: its source is `gh-pages` at `/`, with custom domain `haojunhan.com`. The existing account setting did not enforce HTTPS; no hosting settings were changed during the local redesign. Confirm that setting and the live certificate/redirect behaviour at release.
 
 Before release, record the current deployment SHA/artifact. Roll back by redeploying the prior artifact or reverting the release change and rebuilding. Preserve `CNAME`. Never force-push source history for rollback.
