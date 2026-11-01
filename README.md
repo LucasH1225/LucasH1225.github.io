@@ -21,14 +21,14 @@ This checkout also has an ignored, locally compiled Ruby in `vendor/runtime/ruby
 - `index.html`: homepage biography and selected sections.
 - `_data/personal.yml`: navigation, contact information, asset version and competition-essay summary/status.
 - `_projects/`: four project case studies. Front matter supplies summaries to the homepage and projects index. `featured: true` and `featured_order` control homepage selection.
-- `_posts/`: four full essays, one forthcoming AI safety post, and two original notes marked `published: false`. Explicit permalinks preserve the published articles’ addresses. `selected` and `selected_order` control homepage writing links; `recent: true` lists a post under Recent writing, and `status` supplies an optional article status.
+- `_posts/`: five full essays and two original notes marked `published: false`. Explicit permalinks preserve the published articles’ addresses. `selected` and `selected_order` control homepage writing links; `recent: true` lists a post under Recent writing, and `status` supplies an optional article status.
 - `_pages/`: projects/writing indexes, CV landing page, 404, and compatibility pages for two retired original placeholders.
 - `_layouts/`, `_includes/personal/`: shared presentation.
 - `assets/personal/`: CSS, screenshot interaction, local font, project media and CV PDF.
 
 The author authorised publication of “Should AI speech be limited?” on 23 October 2026. Its full article is published at `/blog/2026/should-ai-speech-be-limited/`, using the final-essay tab of the original document. Keep its competition status as result pending until a result is confirmed; do not infer an award from the date. Project status and contribution claims should track the actual implementation.
 
-“Who is the likeliest to seize power by 2035: frontier lab, a national government, or a small group?” was added on 31 October 2026 as a forthcoming AI safety post at `/blog/2026/who-is-the-likeliest-to-seize-power-by-2035/`. The author will supply its body later. Replace the coming-soon text and remove `status: Forthcoming` when that content is supplied.
+“Who is the likeliest to seize power by 2035: frontier lab, a national government, or a small group?” was added on 31 October 2026 at `/blog/2026/who-is-the-likeliest-to-seize-power-by-2035/`. Its full text was supplied on 1 November 2026 from the author's local essay export. The published article preserves its prose, contents, four diagrams and captions, and 15 references; the editing-log appendix and its contents link are excluded. The original publication date and URL remain unchanged. The four original PNGs are in `assets/personal/ai-safety-2035/`, with full-size links for reading the wide diagrams.
 
 Use `asset_version` in `_data/personal.yml` when changing CSS/JS. Keep page descriptions, image alt text/dimensions and collaborator/asset credits current. Mathematical notation in the existing determinism essay uses native MathML, without a client-side library.
 
