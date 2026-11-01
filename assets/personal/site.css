@@ -230,6 +230,11 @@ h2, h3 { scroll-margin-top: 24px; }
 .article-prose ul, .article-prose ol { padding-left: 24px; }
 .article-prose blockquote { margin: 25px 0; padding-left: 20px; border-left: 2px solid #b9c8b2; color: var(--muted); }
 .article-prose img { border-radius: 7px; }
+.article-prose .article-figure { margin: 28px 0; }
+.article-figure img { width: 100%; height: auto; }
+.article-figure figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.article-figure figcaption a { flex-shrink: 0; }
+.article-prose hr { margin: 32px 0; border: 0; border-top: 1px solid var(--rule); }
 .article-prose pre { overflow-x: auto; padding: 18px; border: 1px solid var(--rule); font-size: 13px; }
 .article-prose math { font-size: 1em; }
 .article-end { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--rule); font-size: 13px; }
