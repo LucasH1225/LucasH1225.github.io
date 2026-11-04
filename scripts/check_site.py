@@ -18,7 +18,7 @@ POSTS = [
 ]
 EXPECTED = {'/', '/projects/', '/blog/', '/cv/', '/404.html'} | {
     f'/projects/{slug}/' for slug in (
-        'personal-ai-assistant', 'robot-coverage', 'wankai', 'restaurant-website-workflow'
+        'personal-ai-assistant', 'photo-fumble', 'robot-coverage', 'wankai', 'restaurant-website-workflow'
     )
 } | set(POSTS)
 COMPATIBILITY = {'/blog/2025/A2life/', '/blog/2025/test/'}

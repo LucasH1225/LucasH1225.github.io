@@ -9,7 +9,7 @@ context_label: Setting
 context: Grid simulation
 stack: Python, PyTorch, Webots
 featured: true
-featured_order: 2
+featured_order: 3
 image: /assets/personal/robot-coverage.webp
 image_alt: Two grid simulations comparing A-star planning and a hybrid learned coverage controller
 image_width: 900

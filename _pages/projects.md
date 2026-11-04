@@ -1,13 +1,13 @@
 ---
 layout: personal
 title: Projects
-description: Personal AI tools, robot coverage research, physics-driven games, and reusable website-building workflows.
+description: Personal AI tools, robot coverage research, multiplayer games, and reusable website-building workflows.
 permalink: /projects/
 section: projects
 ---
 <header class="index-header">
   <h1>Projects</h1>
-  <p>Tools for everyday life, experiments in robot planning, and games built around physical interaction.</p>
+  <p>Tools for everyday life, experiments in robot planning, and multiplayer games.</p>
 </header>
 <section aria-labelledby="selected-projects-title">
   <h2 class="index-section-title" id="selected-projects-title">Selected projects</h2>

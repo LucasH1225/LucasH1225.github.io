@@ -20,7 +20,7 @@ This checkout also has an ignored, locally compiled Ruby in `vendor/runtime/ruby
 
 - `index.html`: homepage biography and selected sections.
 - `_data/personal.yml`: navigation, contact information, asset version and competition-essay summary/status.
-- `_projects/`: four project case studies. Front matter supplies summaries to the homepage and projects index. `featured: true` and `featured_order` control homepage selection.
+- `_projects/`: five project case studies. Front matter supplies summaries to the homepage and projects index. `featured: true` and `featured_order` control homepage selection.
 - `_posts/`: five full essays and two original notes marked `published: false`. Explicit permalinks preserve the published articles’ addresses. `selected` and `selected_order` control homepage writing links; `recent: true` lists a post under Recent writing, and `status` supplies an optional article status.
 - `_pages/`: projects/writing indexes, CV landing page, 404, and compatibility pages for two retired original placeholders.
 - `_layouts/`, `_includes/personal/`: shared presentation.

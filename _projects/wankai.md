@@ -10,7 +10,7 @@ context: Local multiplayer
 stack: React, Three.js, Electron
 role: "My recent contributions: playable characters, the preparation interface, and arena integration."
 featured: true
-featured_order: 3
+featured_order: 4
 image: /assets/personal/wankai-arena.webp
 image_alt: Two animal fighters facing each other in Wankai's 3D Colosseum arena
 image_width: 900
