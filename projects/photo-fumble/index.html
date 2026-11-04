@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A real-time browser party game built at OxHack 2026 for three or more friends.">
+<meta name="theme-color" content="#f8f9fa">
+<meta name="author" content="Lucas Han">
+<meta property="og:title" content="Photo Fumble — Lucas Han">
+<meta property="og:description" content="A real-time browser party game built at OxHack 2026 for three or more friends.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://haojunhan.com/projects/photo-fumble/">
+<meta property="og:image" content="https://haojunhan.com/assets/personal/photo-fumble-landing.webp">
+<meta property="og:site_name" content="Lucas Han">
+<link rel="canonical" href="https://haojunhan.com/projects/photo-fumble/">
+<link rel="icon" href="/assets/personal/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/personal/fonts/Manrope.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="/assets/personal/site.css?v=20261101-ai-safety">
+<link rel="alternate" type="application/atom+xml" title="Lucas Han — Writing" href="/feed.xml">
+
+<title>Photo Fumble — Lucas Han</title>
+
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+  <nav class="main-nav" aria-label="Main navigation">
+    
+      <a href="/">about</a>
+    
+      <a href="/projects/" class="is-current">projects</a>
+    
+      <a href="/blog/">writing</a>
+    
+  </nav>
+  <a class="cv-link" href="/assets/personal/lucas-han-cv.pdf">CV <span class="file-type">PDF</span></a>
+</header>
+
+      <main id="main">
+        <article class="case-study">
+  <a class="back-link" href="/projects/"><span aria-hidden="true">←</span> All projects</a>
+  <header class="case-header">
+    <h1>Photo Fumble</h1>
+    <p class="case-lead">Bring a photo, a voice note, or an old chat. See how much your friends remember about what happened.</p>
+    <dl class="project-facts">
+      <div><dt>Status</dt><dd>Live game</dd></div>
+      <div><dt>Hackathon</dt><dd>OxHack 2026</dd></div>
+      <div><dt>Built with</dt><dd>React, TypeScript, Node.js, Socket.IO, Supabase</dd></div>
+    </dl>
+    <p class="contribution">I led the OxHack team and built the web application.</p>
+  </header>
+  
+    <figure class="project-hero">
+      <img src="/assets/personal/photo-fumble-landing.webp" alt="Photo Fumble’s landing page, with an empty room join form and a spread of sample photo prints" width="1265" height="1000" fetchpriority="high">
+      <figcaption>The public room entry screen uses sample photos. Photo credits are listed on the game’s homepage.</figcaption>
+    </figure>
+  
+  <div class="case-prose">
+    <p><a href="https://photo-fumble.onrender.com/"><strong>Play Photo Fumble</strong></a> · <a href="https://github.com/LucasH1225/photo-fumble">View source</a></p>
+
+<h2 id="from-a-shared-memory-to-a-round">From a shared memory to a round</h2>
+
+<p>I built Photo Fumble at <a href="https://26.oxhack.net/">OxHack 2026</a> as a party game for groups of three or more. One player creates a room and shares its six-digit code. The others join from their own browsers. The host picks a mode, everyone contributes one item, and the game runs timed rounds and shows a final ranking before returning the group to the lobby.</p>
+
+<p>Each mode asks a different question about what the group remembers. In <strong>Memory Quiz</strong>, players guess when a photo was taken. <strong>Voice Detective</strong> and <strong>Chat Archaeology</strong> ask them to reconstruct the context of a recording or a chat. <strong>Memory Bluff</strong> pairs a photo with two stories and asks which is true. In <strong>Memory Impostor</strong>, one player sees a blurred photo and has to describe it without giving themselves away.</p>
+
+<h2 id="keeping-the-room-in-sync">Keeping the room in sync</h2>
+
+<p>I built the interface in React and TypeScript. A Node.js server controls round deadlines, validates actions, and calculates scores. Socket.IO sends state updates as players submit guesses, vote, and move between rounds. Each browser receives only the view for its player, so the server can send the blurred photo to the impostor while the others see the clear one.</p>
+
+<p>Supabase stores room state and media in production. Rooms keep separate players, uploads, and games, and a refresh returns a player to the current round with its original deadline. The same group can reuse its room code to play another mode.</p>
+
+    <div class="case-end"><a href="/projects/">Back to projects</a><a href="mailto:lucashan1225@gmail.com?subject=Photo+Fumble">Get in touch</a></div>
+  </div>
+</article>
+
+      </main>
+      <footer class="site-footer"><span>© 2026 Lucas Han</span><span>Oxford &amp; Shenzhen</span></footer>
+
+    </div>
+  </body>
+</html>
