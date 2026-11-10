@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Personal AI Assistant</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="canonical" href="https://haojunhan.com/personal-ai-assistant/">
 <meta name="description" content="A native Mac assistant that turns everyday notes into connected personal records. Working prototype by independent developer Haojun Han.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -271,11 +271,16 @@ footer strong { color: var(--ink); font-weight: 600; }
 @keyframes pop { 0% { opacity: 0; transform: translateY(10px) scale(.97); box-shadow: 0 0 0 0 var(--line); }
   60% { opacity: 1; transform: none; box-shadow: 0 0 0 6px var(--line); } 100% { box-shadow: 0 0 0 0 var(--line); } }
 @media (prefers-reduced-motion: reduce) { .records .rec, .rec-head { animation: none; } .sendbtn.invite { animation: none; } }
+.skip { position: absolute; left: 12px; top: -48px; z-index: 20; padding: 8px 14px; border-radius: 8px; background: var(--ink); color: var(--paper); text-decoration: none; }
+.skip:focus { top: 12px; }
 </style>
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} img{max-width:100%} [hidden]{display:none!important}.skip { position: absolute; left: 12px; top: -48px; z-index: 20; padding: 8px 14px; border-radius: 8px; background: var(--ink); color: var(--paper); text-decoration: none; }
+.skip:focus { top: 12px; }
+</style>
 </head>
 <body>
 
+<a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <div class="wrap">
     <div class="brand">
@@ -292,7 +297,7 @@ footer strong { color: var(--ink); font-weight: 600; }
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="stage" aria-label="Try Capture">
     <div class="wrap stage-inner">
       <div class="stage-head">
@@ -401,8 +406,8 @@ footer strong { color: var(--ink); font-weight: 600; }
       </div>
       <figure class="shot">
         <div class="frame">
-          <img class="l" src="capture-light.jpg" width="2000" height="1005" alt="The Mac prototype in light mode. The Capture editor is on the left. The Captured today list on the right shows fictional submissions about a seminar, a meal and a walk, each with its saved journal, shopping, task and area records.">
-          <img class="d" src="capture-dark.jpg" width="2000" height="1005" alt="The same Mac prototype screen in the dark paper theme, showing Capture and the Captured today list with fictional example data.">
+          <img class="l" src="/assets/personal/assistant-demo/capture-light.jpg" width="2000" height="1005" alt="The Mac prototype in light mode. The Capture editor is on the left. The Captured today list on the right shows fictional submissions about a seminar, a meal and a walk, each with its saved journal, shopping, task and area records.">
+          <img class="d" src="/assets/personal/assistant-demo/capture-dark.jpg" width="2000" height="1005" alt="The same Mac prototype screen in the dark paper theme, showing Capture and the Captured today list with fictional example data.">
         </div>
         <figcaption>Mac prototype with fictional example data, November 7, 2026.</figcaption>
       </figure>
@@ -570,7 +575,7 @@ function interpret(text, base) {
 }
 
 (function () {
-  var MEAL_SRC = "meal-salmon.jpg";
+  var MEAL_SRC = "/assets/personal/assistant-demo/meal-salmon.jpg";
   var presets = [
     { text: "Yesterday I went to the pottery workshop with Maya and felt calm." },
     { text: "Meeting with Daniel tomorrow at 3pm about the project. Remind me to send the slides tonight. Buy coffee beans and milk." },
