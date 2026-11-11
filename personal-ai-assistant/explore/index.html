@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ways to explore · Personal AI Assistant</title>
+<link rel="canonical" href="https://haojunhan.com/personal-ai-assistant/explore/">
+<meta name="description" content="Six views of the same records in the Personal AI Assistant Mac prototype: People, Meals, Workouts, Journal, Timeline and Shopping. Shown with made-up records.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+<style>
+/* Same paper tokens as the product page. Each view gets one row: loop on one side, a short honest description on the other. */
+:root {
+  --paper: #fbfaf7;
+  --chrome: #f4f2ed;
+  --surface: #ffffff;
+  --ink: #2f2c27;
+  --muted: #6e685e;
+  --rule: #e7e3db;
+  --brass: #8a7350;
+  --brass-strong: #5e4c31;
+  --display: "Newsreader", "New York", "Iowan Old Style", Georgia, serif;
+  --body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+/* Deliberately light-only, matching the product page. */
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
+img, video { max-width: 100%; }
+.wrap {
+  max-width: 1180px; margin: 0 auto;
+  padding-left: max(16px, 2.5vw, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, 2.5vw, env(safe-area-inset-right, 0px));
+}
+a { color: var(--brass-strong); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 6px; }
+h1, h2 { font-family: var(--display); font-weight: 500; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+.eyebrow { font: 500 12px/1.4 var(--body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.skip { position: absolute; left: 12px; top: -48px; z-index: 20; padding: 8px 14px; border-radius: 8px; background: var(--ink); color: var(--paper); text-decoration: none; }
+.skip:focus { top: 12px; }
+
+header.top { border-bottom: 1px solid var(--rule); background: var(--chrome); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; color: var(--ink); text-decoration: none; }
+nav.links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; }
+nav.links a { color: var(--muted); text-decoration: none; }
+nav.links a:hover, nav.links a[aria-current="page"] { color: var(--ink); }
+
+.intro { padding-block: 56px 32px; display: grid; gap: 14px; max-width: 46em; }
+.intro h1 { font-size: clamp(38px, 5.5vw, 58px); line-height: 1.04; }
+.intro .lede { font-size: 19px; }
+.intro .note { font-size: 14px; color: var(--muted); }
+.toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
+.btn { font: 500 14px/1 var(--body); padding: 10px 16px; border-radius: 9px; cursor: pointer; border: 1px solid var(--rule); background: var(--chrome); color: var(--ink); }
+.btn:hover { background: #ece7dd; }
+
+.views { display: grid; gap: 0; padding-bottom: 40px; }
+.view { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 48px; align-items: center; padding-block: 40px; border-top: 1px solid var(--rule); }
+.view:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); }
+.view:nth-child(even) .clip { order: 2; }
+.clip { margin: 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--rule); aspect-ratio: 16 / 9; box-shadow: 0 18px 40px -30px rgba(47, 44, 39, .35); }
+.clip video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.text { display: grid; gap: 12px; }
+.text h2 { font-size: clamp(28px, 3.4vw, 38px); line-height: 1.1; }
+.text p { font-size: 16.5px; }
+.text ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 14.5px; display: grid; gap: 4px; }
+
+.closing { border-top: 1px solid var(--rule); padding-block: 40px 56px; display: grid; gap: 12px; max-width: 46em; }
+.closing h2 { font-size: 28px; }
+
+footer { border-top: 1px solid var(--rule); background: var(--chrome); }
+footer .wrap { padding-block: 36px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; font-size: 14px; color: var(--muted); }
+footer strong { color: var(--ink); font-weight: 600; }
+
+@media (max-width: 860px) {
+  .view, .view:nth-child(even) { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 32px; }
+  .view:nth-child(even) .clip { order: 0; }
+  footer .wrap { grid-template-columns: minmax(0, 1fr); }
+  nav.links { gap: 14px; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/personal-ai-assistant/">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M8 9.5h8M8 13h5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="16.5" cy="15.5" r="1.6" fill="currentColor"/></svg>
+      Personal AI Assistant
+    </a>
+    <nav class="links" aria-label="Pages">
+      <a href="/personal-ai-assistant/">Overview</a>
+      <a href="/personal-ai-assistant/explore/" aria-current="page">Ways to explore</a>
+      <a href="/personal-ai-assistant/#status">Status</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <section class="intro" aria-labelledby="explore-h">
+      <span class="eyebrow">Explore</span>
+      <h1 id="explore-h">The same records, seen six ways.</h1>
+      <p class="lede">Everything you write in Capture is saved once. Explore reads those records back by person, by meal, by workout, by day or as a list. Nothing here is a separate thing to keep up to date.</p>
+      <p class="note">These short loops use made-up records and are based on the Mac prototype's Explore views. The prototype is not available to download.</p>
+      <div class="toolbar">
+        <button class="btn" id="toggle" type="button" aria-pressed="false" hidden>Pause the loops</button>
+      </div>
+    </section>
+
+    <div class="views">
+      <section class="view" aria-labelledby="people-h">
+        <figure class="clip" style="background:#c9deec">
+          <video muted loop playsinline preload="none" width="1280" height="720" poster="/assets/personal/assistant-explore/explore-people-poster.jpg" aria-label="People map: You in the centre, linked to Maya through a pottery workshop and a dinner.">
+            <source src="/assets/personal/assistant-explore/explore-people.webm" type="video/webm">
+            <source src="/assets/personal/assistant-explore/explore-people.mp4" type="video/mp4">
+          </video>
+        </figure>
+        <div class="text">
+          <span class="eyebrow">People</span>
+          <h2 id="people-h">Who you spent time with</h2>
+          <p>A map that starts from you. Select a person to see the moments you recorded together, or switch to a plain list.</p>
+          <ul>
+            <li>Links come only from things you wrote down.</li>
+            <li>No closeness scores. Appearing in the same note doesn't make two people friends.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="view" aria-labelledby="meals-h">
+        <figure class="clip" style="background:#d6e4bb">
+          <video muted loop playsinline preload="none" width="1280" height="720" poster="/assets/personal/assistant-explore/explore-meals-poster.jpg" aria-label="Meals diary for one day: three meals, two with estimated calories, adding up to a partial total.">
+            <source src="/assets/personal/assistant-explore/explore-meals.webm" type="video/webm">
+            <source src="/assets/personal/assistant-explore/explore-meals.mp4" type="video/mp4">
+          </video>
+        </figure>
+        <div class="text">
+          <span class="eyebrow">Meals</span>
+          <h2 id="meals-h">What you ate, day by day</h2>
+          <p>A food diary with a daily calorie view. Open a day to see which meals make up its number.</p>
+          <ul>
+            <li>Estimated calories are labelled as estimates.</li>
+            <li>Meals without calories are counted as missing, not as zero.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="view" aria-labelledby="workouts-h">
+        <figure class="clip" style="background:#bfe2d9">
+          <video muted loop playsinline preload="none" width="1280" height="720" poster="/assets/personal/assistant-explore/explore-workouts-poster.jpg" aria-label="Workouts: a week of recorded minutes as bars, with the run and stretching sessions listed below.">
+            <source src="/assets/personal/assistant-explore/explore-workouts.webm" type="video/webm">
+            <source src="/assets/personal/assistant-explore/explore-workouts.mp4" type="video/mp4">
+          </video>
+        </figure>
+        <div class="text">
+          <span class="eyebrow">Workouts</span>
+          <h2 id="workouts-h">Movement you recorded</h2>
+          <p>Minutes per day from the sessions you logged, with each session listed underneath.</p>
+          <ul>
+            <li>It totals what you recorded. It isn't a complete activity count.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="view" aria-labelledby="journal-h">
+        <figure class="clip" style="background:#e8d6b4">
+          <video muted loop playsinline preload="none" width="1280" height="720" poster="/assets/personal/assistant-explore/explore-journal-poster.jpg" aria-label="Journal: one entry in the writer's own words, with other pages listed below, one without a date.">
+            <source src="/assets/personal/assistant-explore/explore-journal.webm" type="video/webm">
+            <source src="/assets/personal/assistant-explore/explore-journal.mp4" type="video/mp4">
+          </video>
+        </figure>
+        <div class="text">
+          <span class="eyebrow">Journal</span>
+          <h2 id="journal-h">The day, in your own words</h2>
+          <p>Entries keep what you wrote. A note about yesterday is filed under yesterday, even if you wrote it today.</p>
+          <ul>
+            <li>No mood scores, and no lesson required.</li>
+            <li>Undated pages say "No date" instead of getting a guessed one.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="view" aria-labelledby="timeline-h">
+        <figure class="clip" style="background:#e7e3db">
+          <video muted loop playsinline preload="none" width="1280" height="720" poster="/assets/personal/assistant-explore/explore-timeline-poster.jpg" aria-label="Timeline: two days of workouts, events, journal entries and meals in order, then filtered to events.">
+            <source src="/assets/personal/assistant-explore/explore-timeline.webm" type="video/webm">
+            <source src="/assets/personal/assistant-explore/explore-timeline.mp4" type="video/mp4">
+          </video>
+        </figure>
+        <div class="text">
+          <span class="eyebrow">Timeline</span>
+          <h2 id="timeline-h">Everything, in order</h2>
+          <p>Plans and recorded moments together, newest day first. Filter to events, journal entries or things with no date.</p>
+        </div>
+      </section>
+
+      <section class="view" aria-labelledby="shopping-h">
+        <figure class="clip" style="background:#e0cdea">
+          <video muted loop playsinline preload="none" width="1280" height="720" poster="/assets/personal/assistant-explore/explore-shopping-poster.jpg" aria-label="Shopping list grouped into groceries and home, with one item marked bought.">
+            <source src="/assets/personal/assistant-explore/explore-shopping.webm" type="video/webm">
+            <source src="/assets/personal/assistant-explore/explore-shopping.mp4" type="video/mp4">
+          </video>
+        </figure>
+        <div class="text">
+          <span class="eyebrow">Shopping</span>
+          <h2 id="shopping-h">One list for things to buy</h2>
+          <p>Items are grouped by category with any quantity you mentioned. Mark them bought; bought and cancelled items stay findable.</p>
+          <ul>
+            <li>A Reminder is created only if you ask to be reminded.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <section class="closing" aria-labelledby="back-h">
+      <h2 id="back-h">Where the records come from</h2>
+      <p>Every view above is filled from Capture: typed notes, voice-message transcripts, photos, and items you drag in from your day. <a href="/personal-ai-assistant/">Try Capture on the overview page</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong>Personal AI Assistant</strong><br>
+      Developed by Haojun Han, independent developer.<br>
+      Prelaunch page. No purchase or download is offered.
+    </div>
+    <div>
+      <strong>Contact</strong><br>
+      A public support contact will be listed here before release.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var videos = Array.prototype.slice.call(document.querySelectorAll(".clip video"));
+  var toggle = document.getElementById("toggle");
+  var motion = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+  var paused = false, visible = new Set();
+
+  function allowed() { return !paused && !(motion && motion.matches); }
+  function sync() {
+    videos.forEach(function (v) {
+      if (allowed() && visible.has(v)) {
+        if (v.preload !== "auto") v.preload = "auto";
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      } else { v.pause(); }
+    });
+  }
+
+  // Only play loops that are on screen; posters stand in everywhere else.
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); });
+      sync();
+    }, { threshold: 0.35 });
+    videos.forEach(function (v) { io.observe(v); });
+  } else { videos.forEach(function (v) { visible.add(v); }); sync(); }
+
+  // Reduced motion shows posters only; otherwise offer a pause control.
+  function updateToggle() {
+    toggle.hidden = !!(motion && motion.matches);
+    toggle.textContent = paused ? "Play the loops" : "Pause the loops";
+    toggle.setAttribute("aria-pressed", paused ? "true" : "false");
+  }
+  toggle.addEventListener("click", function () { paused = !paused; updateToggle(); sync(); });
+  if (motion) {
+    var onChange = function () { updateToggle(); sync(); };
+    if (motion.addEventListener) motion.addEventListener("change", onChange); else if (motion.addListener) motion.addListener(onChange);
+  }
+  updateToggle();
+})();
+</script>
+</body>
+</html>
