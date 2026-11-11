@@ -16,7 +16,7 @@ POSTS = [
     '/blog/2026/should-ai-speech-be-limited/',
     '/blog/2026/who-is-the-likeliest-to-seize-power-by-2035/',
 ]
-EXPECTED = {'/', '/projects/', '/blog/', '/cv/', '/404.html', '/personal-ai-assistant/'} | {
+EXPECTED = {'/', '/projects/', '/blog/', '/cv/', '/404.html', '/personal-ai-assistant/', '/personal-ai-assistant/explore/'} | {
     f'/projects/{slug}/' for slug in (
         'personal-ai-assistant', 'photo-fumble', 'robot-coverage', 'wankai', 'restaurant-website-workflow'
     )
